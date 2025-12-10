@@ -1,15 +1,12 @@
 pluginManagement {
     repositories {
         maven { url = uri("https://mirrors.cloud.tencent.com/nexus/repository/maven-public/") }
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+         google()
         mavenCentral()
         gradlePluginPortal()
+    }
+    plugins{
+        id("androidx.navigation.safeargs.kotlin") version "2.7.7"
     }
 }
 dependencyResolutionManagement {
@@ -20,6 +17,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
 
 rootProject.name = "Beer Adviser"
 include(":app")
